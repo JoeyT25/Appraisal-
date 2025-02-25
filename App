@@ -1,0 +1,9 @@
+import subprocess
+import sys
+
+# Ensure required packages are installed at runtime
+try:
+    import openpyxl
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl"])
+    import openpyxl  # Try importing again after installation
